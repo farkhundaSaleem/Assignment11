@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Read More Example</title>
+    <style>
+      .content {
+        overflow: hidden;
+        height: 100px; 
+      }
+
+
+
+      table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .hidden-form {
+      display: none;
+    }
+
+
+
+
+
+
+    .format {
+
+width: 250px;
+height: 230px;
+
+}
+
+
+/* Modal starts */
+.image-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#image-container img {
+  margin: 10px;
+}
+
+#modal {
+  position: fixed;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  z-index: 999;
+}
+
+.modal-open {
+  display: block;
+}
+
+.modal-close {
+  display: none;
+}
+img{
+  width: 20%;
+}
+
+#modal-img{
+  width: 80%;
+}
+button{
+  border: 5px solid rgb(6, 116, 152);
+}
+
+    </style>
+</head>
+<body>
+ <!-- ////////////Q1/////////// -->
+
+    <h1>Signup Form</h1>
+  
+    <form id="signup-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+  
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br><br>
+  
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+  
+      <button type="submit">Sign Up</button>
+    </form>
+  
+    <h2>Form Data</h2>
+    <div id="form-data"></div>
+
+
+<!-- <!/////////////-- Q2/////////////// --> 
+
+<div class="content">
+    <p>This is a short description of the item.</p>
+    <p>Click the "Read more" button to see the full details.</p>
+    <p>Additional details go here...</p>
+    <p>More details...</p>
+    <p>Even more details...</p>
+  </div>
+</br>
+  <button id="readMoreBtn" onclick="toggleContent()">Read more</button>
+
+
+
+  
+<!-- <!/////////////-- Q3/////////////// --> 
+
+
+
+<h1>Student Details</h1>
+<form id="studentForm">
+  <label for="name">Name:</label>
+  <input type="text" id="name" required>
+  <br>
+  <label for="age">Age:</label>
+  <input type="number" id="age" required>
+  <br>
+  <label for="grade">Grade:</label>
+  <input type="text" id="grade" required>
+  <br>
+
+
+</br>
+  <button type="submit">Add Student</button>
+</form>
+<br>
+<table id="studentTable">
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th>Grade</th>
+    <th>Actions</th>
+  </tr>
+</table>
+
+<form id="editForm" class="hidden-form">
+  <h2>Edit Student</h2>
+  <input type="hidden" id="editIndex">
+  <label for="editName">Name:</label>
+  <input type="text" id="editName" required>
+  <br>
+  <label for="editAge">Age:</label>
+  <input type="number" id="editAge" required>
+  <br>
+  <label for="editGrade">Grade:</label>
+  <input type="text" id="editGrade" required>
+  <br>
+  
+  
+  
+
+  <button type="submit">Update</button>
+  <button type="button" onclick="cancelEdit()">Cancel</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+   <!-- Modal -->
+<div id="modal" class="modal-close">
+  <span class="close-btn" onclick="onClosedImagModal()">&times;</span>
+  <img id="modal-img" src="/images/1675261154_shutterstock_2148766633.jpg.jpg" alt="Modal Image">
+</div>
+
+<!-- Images -->
+<div id="image-container" class="image-row">
+  <img src="/images/1675261154_shutterstock_2148766633.jpg.jpg" alt="Image 1" onclick="openModal('/images/1675261154_shutterstock_2148766633.jpg.jpg')">
+  <img src="/images/9624779386_2d427f02e3_b.jpg" alt="Image 2" onclick="openModal('/images/9624779386_2d427f02e3_b.jpg')">
+  <img src="/images/e7.jpg" alt="Image 3" onclick="openModal('/images/e7.jpg')">
+  <img src="/images/Solar_de_Uyuni_1050x700.jpg" alt="Image 4" onclick="openModal('/images/Solar_de_Uyuni_1050x700.jpg')">
+</div>
+
+<!-- Zoom Controls -->
+<p id="zoomed-paragraph"></p>
+<button onclick="zoomIn()">Zoom In (+)</button>
+<button onclick="zoomOut()">Zoom Out (-)</button>
+    <script src="app.js"></script>
+  </body>
+</html>
+
+
+
